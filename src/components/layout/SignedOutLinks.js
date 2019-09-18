@@ -5,12 +5,12 @@ import { NavLink } from 'react-router-dom';
 const SignedOutLinks = () => (
     <React.Fragment>
         <li className="nav-item">
-            <NavLink className="nav-link" href="#">
+            <NavLink className="nav-link" to="/signup">
                 Sign Up
             </NavLink>
         </li>
         <li className="nav-item">
-            <NavLink className="nav-link" to="/">
+            <NavLink className="nav-link" to="/signin">
                 Login
             </NavLink>
         </li>

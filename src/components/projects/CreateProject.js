@@ -1,11 +1,12 @@
 import React from 'react';
+import { Field, reduxForm } from 'redux-form'
 
-const CreateProject = () => (
+const CreateProject = ({handleSubmit}) => (
     <div className="container">
         <div className="row">
             <div className="card">
                 <div className="card-body">
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="form-group">
                             <h2>Create new Project</h2>
                         </div>
@@ -31,4 +32,7 @@ const CreateProject = () => (
     </div>
 );
 
-export default CreateProject;
+export default reduxForm({
+    // a unique name for the form
+    form: 'createProject'
+})(CreateProject);

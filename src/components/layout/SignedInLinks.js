@@ -1,11 +1,11 @@
 import React from 'react';
 // gets access to .active class when link is active
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 const SignedInLinks = () => (
     <React.Fragment>
         <li className="nav-item">
-            <NavLink className="nav-link" to="/">
+            <NavLink className="nav-link" to="/create-project">
                 New Project
             </NavLink>
         </li>
@@ -14,8 +14,8 @@ const SignedInLinks = () => (
                 Log Out
             </NavLink>
         </li>
-        <li>
-            <span className="nav-link">NS</span>
+        <li className="nav-item">
+            <Link className="nav-link" to="/">NS</Link>
         </li>
     </React.Fragment>
 );

@@ -11,16 +11,18 @@ const App = () => (
     /* Enables using rout inside App Component */
     <BrowserRouter>
         <Navbar />
+        <div className="container pt-4">
+            <Switch>
+                {/* exact attribute == only exact match with url */}
+                <Route exact path="/" component={Dashboard} />
+                {/*:id is a route parameter*/}
+                <Route path="/project/:id" component={ProjectDetails} />
+                <Route path="/signup" component={SignUp} />
+                <Route path="/signin" component={SignIn} />
+                <Route path="/create-project" component={CreateProject} />
+            </Switch>
+        </div>
         {/*Switch makes sure that only one route is rendered, the first that matches the url*/}
-        <Switch>
-            {/* exact attribute == only exact match with url */}
-            <Route exact path="/" component={Dashboard} />
-            {/*:id is a route parameter*/}
-            <Route path="/project/:id" component={ProjectDetails} />
-            <Route path="/signup" component={SignUp} />
-            <Route path="/signin" component={SignIn} />
-            <Route path="/create-project" component={CreateProject} />
-        </Switch>
     </BrowserRouter>
 );
 
