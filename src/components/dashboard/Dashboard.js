@@ -1,9 +1,10 @@
 import React from 'react';
-import { applySpec } from 'ramda';
+import { applySpec, compose } from 'ramda';
 import { connect } from 'react-redux';
 import Notifications from './Notifications';
 import ProjectList from '../projects/ProjectList';
 import { selectProjects } from '../../store/ducks/projects';
+import { firestoreConnect } from 'react-redux-firebase';
 
 const Dashboard = ({projects}) => (
     <div className="row">
@@ -23,4 +24,9 @@ const mapState = applySpec({
     projects: selectProjects,
 });
 
-export default connect(mapState)(Dashboard);
+export default compose(
+    connect(mapState),
+    firestoreConnect([
+        {collection: 'projects'}
+    ])
+)(Dashboard);
