@@ -30,8 +30,8 @@ const CREATE_PROJECT_FAILURE = 'CREATE_PROJECT_FAILURE';
 // Action creators
 
 // selectors
-// credit to https://tommmyy.github.io/ramda-react-redux-patterns/pages/redux-ramda.html
-export const selectProjects = state => path(['projects', 'data'], state);
+// this selector works after store is enhanced in sync with firestore
+export const selectProjects = state => path(['firestore', 'ordered', 'projects'], state);
 
 // Thunks
 export const createProject = (project) => {

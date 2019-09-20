@@ -1,5 +1,5 @@
 import React from 'react';
-import { applySpec, compose } from 'ramda';
+import { compose } from 'ramda';
 import { connect } from 'react-redux';
 import Notifications from './Notifications';
 import ProjectList from '../projects/ProjectList';
@@ -19,9 +19,8 @@ const Dashboard = ({projects}) => (
     </div>
 );
 
-// credit to https://tommmyy.github.io/ramda-react-redux-patterns/pages/redux-ramda.html
-const mapState = applySpec({
-    projects: selectProjects,
+const mapState = (state) => ({
+    projects: selectProjects(state),
 });
 
 export default compose(

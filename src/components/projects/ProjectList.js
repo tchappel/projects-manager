@@ -1,11 +1,11 @@
 import React from 'react';
-import { and, isNil, isEmpty } from 'ramda';
+import { isEmpty } from 'ramda';
 import ProjectSummary from './ProjectSummary';
 
-const ProjectList = ({projects}) => (
+const ProjectList = ({projects = []}) => (
     <React.Fragment>
         {
-            and(!isNil(projects), !isEmpty(projects)) &&
+            !isEmpty(projects) &&
             projects.map(project => (
                 <ProjectSummary
                     key={project.id}
